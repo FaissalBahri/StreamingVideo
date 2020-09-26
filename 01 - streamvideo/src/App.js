@@ -1,24 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// TODO INSTALL MODULE BOOTSTRAP
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// TODO IMPORTE Router
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+// TODO IMPORT COMPONENTS
+import Home from "./Components/Home";
+import Film from "./Components/Film";
+import Serie from "./Components/Serie";
+
 
 function App() {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+              {/* HEADER */}
+              <header id="header">
+                <Link to="/">
+                  <h1>StreamVideo</h1>
+                </Link>
+              </header>
+
+              {/* SWITCH ROUTE */}
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/Film" component={Film} />
+                <Route exact path="/Serie" component={Serie} />
+              </Switch>
+      </Router>
+            
     </div>
   );
 }

@@ -20,7 +20,90 @@ app.get("/allmedia", function (req, res) {
   FROM MEDIA
   INNER JOIN apartenir ON Media.id_media = apartenir.id_media
   INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie `;
-  
+
+  //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
+  db.query(requete, (err, rows, fields) => {
+    if (err) {
+      res.send(err.message);
+      console.log(err.message);
+    } else {
+      res.send(rows);
+      console.log(rows);
+    }
+  });
+});
+
+//TABLE FILM
+
+app.get("/allmovies", function (req, res) {
+  let requete = `SELECT
+  nom_media AS Nom,
+  description_media AS Description,
+  image_media AS Image,
+  DATE_FORMAT(date_media, "%d/%m/%Y") AS Date,
+  type_media As Type
+FROM
+  MEDIA
+INNER JOIN apartenir ON Media.id_media = apartenir.id_media
+INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie
+WHERE
+  nom_categorie = 'Film'`;
+
+  //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
+  db.query(requete, (err, rows, fields) => {
+    if (err) {
+      res.send(err.message);
+      console.log(err.message);
+    } else {
+      res.send(rows);
+      console.log(rows);
+    }
+  });
+});
+
+//TABLE SERIE
+app.get("/allserie", function (req, res) {
+  let requete = `SELECT
+  nom_media AS Nom,
+  description_media AS Description,
+  image_media AS Image,
+  DATE_FORMAT(date_media, "%d/%m/%Y") AS Date,
+  type_media As Type
+FROM
+  MEDIA
+INNER JOIN apartenir ON Media.id_media = apartenir.id_media
+INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie
+WHERE
+  nom_categorie = 'Serie'`;
+
+  //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
+  db.query(requete, (err, rows, fields) => {
+    if (err) {
+      res.send(err.message);
+      console.log(err.message);
+    } else {
+      res.send(rows);
+      console.log(rows);
+    }
+  });
+});
+
+//TABLE MANGA
+
+app.get("/allmanga", function (req, res) {
+  let requete = `SELECT
+  nom_media AS Nom,
+  description_media AS Description,
+  image_media AS Image,
+  DATE_FORMAT(date_media, "%d/%m/%Y") AS Date,
+  type_media As Type
+FROM
+  MEDIA
+INNER JOIN apartenir ON Media.id_media = apartenir.id_media
+INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie
+WHERE
+  nom_categorie = 'Manga'`;
+
   //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
   db.query(requete, (err, rows, fields) => {
     if (err) {
