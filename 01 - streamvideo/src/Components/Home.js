@@ -1,8 +1,11 @@
+
 import React from "react";
 
 export default function Home() {
   return (
+
     <div id="conteneur-body">
+
       {/* CARDS 1 */}
       <div className="conteneur-Card">
         <img src="../images/assets/clapperboard-red.png" alt="Logo-Film" />

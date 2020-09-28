@@ -21,14 +21,6 @@ function App() {
 
       <Router>
 
-            {/* <div className="loader">
-              <strong>Loading...</strong>
-              <div
-                className="spinner-border ml-auto"
-                role="status"
-                aria-hidden="true"
-              ></div>
-            </div> */}
 
               {/* HEADER */}
               <header id="header">
