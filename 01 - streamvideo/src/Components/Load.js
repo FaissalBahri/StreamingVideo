@@ -4,8 +4,8 @@ import "../App.css";
 export default function Load() {
   return (
     <div>
-      <div class="container">
-        <div class="loader">
+      <div className="container">
+        <div className="loader">
           <span></span>
         </div>
       </div>

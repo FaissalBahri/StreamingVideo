@@ -34,20 +34,26 @@ app.get("/allmedia", function (req, res) {
 });
 
 //TABLE FILM
+// SELECT YEAR (`date_media`)
+// FROM MEDIA
+// WHERE 
+// date_media > 2010
 
 app.get("/allmovies", function (req, res) {
   let requete = `SELECT
   nom_media AS Nom,
   description_media AS Description,
   image_media AS Image,
-  DATE_FORMAT(date_media, "%d/%m/%Y") AS Date,
+	YEAR (date_media) AS Date,
   type_media As Type
 FROM
   MEDIA
 INNER JOIN apartenir ON Media.id_media = apartenir.id_media
 INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie
 WHERE
-  nom_categorie = 'Film'`;
+	date_media > 2010 
+AND
+  	nom_categorie = 'Film'`;
 
   //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
   db.query(requete, (err, rows, fields) => {

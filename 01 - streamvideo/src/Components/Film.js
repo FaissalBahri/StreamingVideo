@@ -10,7 +10,6 @@ export default class Film extends Component {
     this.state = {
       movies: [],
       loader: true,
-      hasError: null,
     };
   }
 
@@ -24,6 +23,7 @@ export default class Film extends Component {
       })
 
       .then((data) => {
+        console.log(data)
         this.setState({ movies: data, loader: false });
       })
 
@@ -36,6 +36,8 @@ export default class Film extends Component {
 
   }
 
+ // POUR TRIER 
+
   render = () => {
     const leFilm = this.state.movies;
 
@@ -44,6 +46,7 @@ export default class Film extends Component {
         <div id="error"> </div>
         {this.state.loader ? 
           <Load /> : (
+    
           leFilm.map((data, i) => {
             return (
               <div className="Conteneur-Card">
