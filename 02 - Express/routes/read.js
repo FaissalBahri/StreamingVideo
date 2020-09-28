@@ -18,8 +18,8 @@ app.get("/allmedia", function (req, res) {
   let requete = `
   SELECT nom_media , description_media, image_media, DATE_FORMAT(date_media, "%d/%m/%Y") AS date_media ,type_media,CATEGORIE.nom_categorie
   FROM MEDIA
-  INNER JOIN apartenir ON Media.id_media = apartenir.id_media
-  INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie `;
+    INNER JOIN apartenir ON Media.id_media = apartenir.id_media
+    INNER JOIN CATEGORIE ON apartenir.id_categorie = CATEGORIE.id_categorie `;
 
   //La requete renverra soit une erreur "err" soit un resultat "row" qui contient le nombre de ligne
   db.query(requete, (err, rows, fields) => {

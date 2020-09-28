@@ -53,3 +53,48 @@ position: absolute;
 .hidden {
   display: none;
 }
+
+/* FOOTER */
+
+#footer{
+  background-color: #143140;
+  color: rgb(191, 192, 192);
+  padding: 1%;
+}
+
+#conteneur-legal{
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+#conteneur-assets{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1%;
+}
+
+#conteneur-assets img {
+ width: 5%;
+ height: 30px;
+ margin: 5px;
+}
+
+#conteneur-social{
+  display: flex;
+  justify-content: flex-start;
+  width: 70%;
+  padding: 2%;
+}
+
+#conteneur-store{
+  display: flex;
+  justify-content: flex-end;
+}
+#conteneur-store img{
+  width: 20%;
+  height: 30px;
+  margin: 5px;
+}
