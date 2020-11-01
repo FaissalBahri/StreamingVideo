@@ -1,4 +1,4 @@
-# StreamingVideo-
+# Composition d'une application web simple avec un ensemble d'écrans et un flux API 
 
 
 git clone https://github.com/FaissalBahri/StreamingVideo.git
