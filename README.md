@@ -1,8 +1,11 @@
 # Composition d'une application web simple avec un ensemble d'écrans et un flux API 
 
+# Installer le projet:
 
 git clone https://github.com/FaissalBahri/StreamingVideo.git
 
-Create React App : npx create-react-app streamvideo
+   cd StreamingVideo
 
-React Router DOM : npm install react-router-dom --save
+   npm i
+
+   npm start
