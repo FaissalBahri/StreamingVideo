@@ -6,13 +6,9 @@ git clone https://github.com/FaissalBahri/StreamingVideo.git
 
    cd StreamingVideo
    
-   cd 02 - Express
-       npm i
-       npm start
+   cd 02 - Express --> npm i --> npm start
         
-   cd 01 - streamvideo
-      npm i
-      npm start
+   cd 01 - streamvideo --> npm i --> npm start
    
    
 
